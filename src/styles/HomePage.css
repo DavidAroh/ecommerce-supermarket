@@ -5,7 +5,9 @@
     padding: 0;
     font-family: Poppins;
     box-sizing: border-box;
-    background-color: white;
+}
+body{
+    background: white;
 }
 .homepage .contain{
     display: flex;
@@ -15,6 +17,7 @@
     gap: 30px;
     align-content: center;
     padding: 40px 40px;
+    background-color: white;
 }
 .homepage .contain .left h1{
     font-weight: 700;
@@ -377,4 +380,25 @@ span{
 }
 .link1{
     text-decoration: none;
+}
+.prompt {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    text-align: center;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Fades in and out */
+    position: fixed;
+    z-index: 20;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }

@@ -6,6 +6,7 @@ import { IoHeartOutline } from "react-icons/io5";
 import { RiUserLine } from "react-icons/ri";
 import { BsChevronDown } from "react-icons/bs";
 import { RiSearchLine } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -14,13 +15,14 @@ const Navbar = () => {
 
   const toggleCategoriesDropdown = () => {
     setShowCategoriesDropdown(!showCategoriesDropdown);
-    setShowAboutUsDropdown(false); // Close the About Us dropdown if open
+    setShowAboutUsDropdown(false); 
   };
 
   const toggleAboutUsDropdown = () => {
     setShowAboutUsDropdown(!showAboutUsDropdown);
-    setShowCategoriesDropdown(false); // Close the Categories dropdown if open
+    setShowCategoriesDropdown(false);
   };
+  
 
   return (
     <>
@@ -42,12 +44,14 @@ const Navbar = () => {
           </div>
 
           <div className='prop'>
-            <div className='email'>
-              <div className='icon'>
-                <BiShoppingBag />
+            <Link to={`/components/Cart`} className='link'>
+              <div className='email'>
+                <div className='icon'>
+                  <BiShoppingBag />
+                </div>
+                <p>Cart</p>
               </div>
-              <p>Cart</p>
-            </div>
+            </Link>
             <div className='email'>
               <div className='icon'>
                 <IoHeartOutline />

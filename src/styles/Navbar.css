@@ -9,6 +9,9 @@
 .header{
     width: 100%;
 }
+.mid-header{
+    background-color: white;
+}
 .header .top-header{
     max-width: 100%;
     display: flex;
@@ -41,10 +44,7 @@
     width: 100%;
     max-width: 100%;
     justify-content: space-between;
-    /* position: fixed;
-    z-index: 20; */
-    background: transparent;
-    /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06); */
+    background-color: transparent;
 }
 .header .mid-header .logo img{
     cursor: pointer;
@@ -338,4 +338,7 @@
 .links .dropdown .right .fruit2 .redbg2 img{
     margin: 2px auto;
     margin-left: 3px;
+}
+.link{
+    color: white;
 }

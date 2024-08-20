@@ -7,21 +7,29 @@ import LikeButton from '../components/LikedButton';
 import StarRating from '../components/StarRating';
 import Footer from '../components/Footer';
 import ColumnSlideScroll from "../components/ColumnSlideScroll";
-// import ProductPage from "../components/productPage";
 import '../styles/HomePage.css';
 
 const Homepage = () => {
-  const [popularProduct, setPopularProduct] = useState(Homeproduct)
-
+  const [popularProduct, setPopularProduct] = useState(Homeproduct);
   const [clickedBox, setClickedBox] = useState(null);
+  const [showPrompt, setShowPrompt] = useState(true);
+  const [addedProduct, setAddedProduct] = useState(null);
 
   const handleBoxClick = (id) => {
     setClickedBox(id);
   };
 
+  const addtoCart = (product) => {
+    // Add product to cart logic here
+
+    setAddedProduct(product); // Set the product that was added
+    setShowPrompt(true); // Show the prompt message
+    setTimeout(() => setShowPrompt(false), 3000); // Hide the prompt after 3 seconds
+  };
+
   const boxes = [
-    { id: 1, img: 'assets/fruits.svg', label: 'Fresh Fruit', path: '/pages/ProductPage' },
-    { id: 2, img: 'assets/veggies.svg', label: 'Fresh Vegetables', path: '/pages/ProductPage' },
+    { id: 1, img: 'assets/veggies.svg', label: 'Fresh Vegetables', path: '/pages/ProductPage' },
+    { id: 2, img: 'assets/fruits.svg', label: 'Fresh Fruits', path: '/pages/ProductPage' },
     { id: 3, img: 'assets/meat n fish.svg', label: 'Meat & Fish', path: '/pages/ProductPage' },
     { id: 4, img: 'assets/snacks.svg', label: 'Snacks', path: '/pages/ProductPage'},
     { id: 5, img: 'assets/beverages.svg', label: 'Beverages', path: '/pages/ProductPage'},
@@ -31,19 +39,11 @@ const Homepage = () => {
     { id: 9, img: 'assets/cooking.svg', label: 'Cooking', path: '/pages/ProductPage'},
     { id: 10, img: 'assets/diabetes.svg', label: 'Diabetic Food', path: '/pages/ProductPage'},
     { id: 11, img: 'assets/dish detergents.svg', label: 'Dish Detergents', path: '/pages/ProductPage'},
-    { id: 12, img: 'assets/oil.svg', label: 'Oil',path: '/pages/ProductPage' }
+    { id: 12, img: 'assets/oil.svg', label: 'Oil', path: '/pages/ProductPage' }
   ];
 
-  // const foodBox = [
-  //   { id: 1, img: 'assets/spaghetti.svg', label: 'The ultimate guide to spaghetti: a delicious journey you should try with families.' },
-  //   { id: 2, img: 'assets/chicken.svg', label: 'Chicken, the most consumed protein globally, is a staple in many cuisines.' },
-  //   { id: 3, img: 'assets/burger.svg', label: 'Burger, the quintessential comfort food, have captured the hearts of many.' }
-  // ];
-
-
-
   return (
-    <>
+    <div className='homepage'>
       <div className="homepage">
         <div className='contain'>
           <div className='left'>
@@ -105,9 +105,17 @@ const Homepage = () => {
             </div>
           </div>
         </div>
+        
+        {/* Add to Cart Prompt */}
+        {showPrompt && (
+          <div className="prompt">
+            {addedProduct && `${addedProduct.Name} has been added to your cart!`}
+          </div>
+        )}
+
         <div className='products'>
           <div className='top-text'>
-            <h2>Popular Categories</h2>
+            <h2>Popular Products</h2>
             <p className='view2'>View All <GoArrowRight className='right' /></p>
           </div>
           <div className='bottom-text'>
@@ -118,61 +126,29 @@ const Homepage = () => {
             {
               popularProduct.map((curElm) => {
                 return (
-                  <>
-                    <div className='product-box'>
-                      <div className='img-box'>
-                        <img src={curElm.image} alt=''></img>
-                        <div className='icon'>
-                          <div className='icon-circle'>
-                            <LikeButton className='heart' />
-                          </div>
+                  <div className='product-box' key={curElm.id}>
+                    <div className='img-box'>
+                      <img src={curElm.image} alt={curElm.Name}></img>
+                      <div className='icon'>
+                        <div className='icon-circle'>
+                          <LikeButton className='heart' />
                         </div>
                       </div>
-                      <div className='info'>
-                        <p className='first'>{curElm.Name}</p>
-                        <p className='price'>N{curElm.price}<span className='money'>N20.99</span></p>
-                        <StarRating totalStars={5} />
-                        <button className='cart'>Add to Cart</button>
-                      </div>
                     </div>
-                  </>
+                    <div className='info'>
+                      <p className='first'>{curElm.Name}</p>
+                      <p className='price'>N{curElm.price}<span className='money'>N20.99</span></p>
+                      <StarRating totalStars={5} />
+                      <button className='cart' onClick={() => addtoCart(curElm)}>Add to Cart</button>
+                    </div>
+                  </div>
                 )
               })
             }
           </div>
         </div>
-        {/* <div className='news'>
-          <h2>Latest News</h2>
-          <p className='news'>
-            Get latest news from our bloggers, in other to try out new dishes <br />
-            with your family and friends.
-          </p>
-          <div className='foods'>
-            <div className='food-box'>
-              {foodBox.slice(0, 3).map(foodBox => (
-                <div
-                  key={foodBox.id}
-                  className={`foodBox ${clickedBox === foodBox.id ? 'clicked' : ''}`}
-                  onClick={() => handleBoxClick(foodBox.id)}
-                >
-                  <div className='date'></div>
-                  <img src={foodBox.img} alt={foodBox.label}></img>
-                  <div className='des'>
-                    <div className='icons'>
-                      <div className='food-icon'><span><GoTag className='food' />Food</span></div>
-                      <div className='admin-icon'><span><HiOutlineUser className='admin' />By Admin</span></div>
-                      <div className='comments-icon'><span><BiMessageAlt className='comment' />65 Comments</span></div>
-                    </div>
-                    <p>{foodBox.label}</p>
-                    <div className='btn'>
-                      <button className='btn'>Read More<GoArrowRight className='right' /></button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div> */}
+        <br />
+        <br />
         <div className='points-field'>
           <h1>Why Choose Us?</h1>
           <div className='points'>
@@ -237,13 +213,13 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        
+
         <br/>
         <ColumnSlideScroll />
 
         <Footer/>
       </div>
-    </>
+    </div>
   );
 };
 

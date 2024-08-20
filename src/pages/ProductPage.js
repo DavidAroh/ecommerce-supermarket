@@ -13,10 +13,12 @@ const ProductPage = () => {
   const handleBoxClick = (id) => {
     setClickedBox(id);
   };
+  
 
+  
   return (
     <>
-      <div className="head">
+      <div className="head1">
       <Link to={`/`} className='link'><button><GoChevronLeft className='arrow-left'/> Back</button></Link>
       <h1>Varieties of Fruits</h1>
       </div>
@@ -25,7 +27,6 @@ const ProductPage = () => {
           popularProduct.map((CurElm) => {
             return (
               <>
-              <Link className='link'>
                 <div 
                   className={`fruit-box ${clickedBox === CurElm.id ? 'clicked' : ''}`}
                   onClick={() => handleBoxClick(CurElm.id)}
@@ -38,14 +39,15 @@ const ProductPage = () => {
                         </div>
                       </div>
                     </div>
-                    <div className='info'>
-                      <p className='first'>{CurElm.Name}</p>
-                      <p className='cost'>N{CurElm.price}<span className='faint'>N20.99</span></p>
-                      <div className='percent'><p>-5%</p></div>
-                      <p className='saving'>You save N50</p>
-                    </div>
+                    <Link to={`/pages/ProductDescription`} className='link'>
+                      <div className='info'>
+                        <p className='first'>{CurElm.Name}</p>
+                        <p className='cost'>N{CurElm.price}<span className='faint'>N20.99</span></p>
+                        <div className='percent'><p>-5%</p></div>
+                        <p className='saving'>You save N50</p>
+                      </div>
+                    </Link>
                   </div>
-              </Link>
               </>
             )
           })
