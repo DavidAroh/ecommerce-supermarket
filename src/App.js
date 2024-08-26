@@ -6,26 +6,34 @@ import ProductPage from './pages/ProductPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/global.css';
 import ProductDescription from './pages/ProductDescription';
+import { CartProvider } from './context/CartContext';
+import Payment from './components/Payment';
+import PaymentSuccess from './components/PaymentSuccess';
 
 const App = () => {
-  const [cart, setCart] = useState([]);
+  // const [cartItems, setCartItems] = useState([]);
 
-  const addtocart = (product) => {
-    setCart([...cart, {...product, qty:1}])
-    console.log(cart)
-  };
+  // const addtocart = (product) => {
+  //   setCartItems([...cart, {...product, qty:1}])
+  //   console.log(cart)
+  // };
 
 
   return (
-    <Router>
-      <Navbar/>
-      <Routes>
-        <Route path="/" element={<Homepage addtocart={addtocart} cart={cart} setCart={setCart} />} />
-        <Route path="/pages/ProductPage" element={<ProductPage addtocart={addtocart} />}/>
-        <Route path="/pages/ProductDescription" element={<ProductDescription addtocart={addtocart} />}/>
-        <Route path="/components/Cart" element={<Cart addtocart={addtocart} cart={cart} setCart={setCart}/>}/>
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/pages/ProductPage" element={<ProductPage  />}/>
+          <Route path="/pages/ProductDescription" element={<ProductDescription  />}/>
+          <Route path="/components/Cart" element={<Cart  />}/>
+          <Route path="/components/Payment" element={<Payment  />}/>
+          <Route path="/components/PaymentSuccess" element={<PaymentSuccess  />}/>
+        </Routes>
+      </Router>
+    </CartProvider>
+    
   )
 }
 

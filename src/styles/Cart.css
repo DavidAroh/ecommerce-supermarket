@@ -1,0 +1,222 @@
+body{
+    background-color: #F8FFFB;
+}
+.cart_container{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 7%;
+}
+
+.cart4{
+    width: 756px auto;
+    height: 676px auto;
+    border: none;
+    border-radius: 20px;
+    /* padding: 20px; */
+    background-color: white;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06);
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.totalItems{
+    position: relative;
+    bottom: 65px;
+    color: #009444;
+    font-weight: 500;
+    font-size: 40px;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    width: 720px;
+    /* height: 200px; */
+    margin-bottom: 15px;
+    margin-left: 30px;
+    padding: 10px;
+    /* gap: 30px; */
+}
+
+.cart-item-image {
+    width: 140px;
+    height: 150px;
+    /* margin-right: 20px; */
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: -30%;
+    bottom: 40px;
+    font-size: 24px;
+}
+.percentd {
+    width: 58px;
+    height: 32px;
+    background-color: #FFEEDA;
+    border: none;
+    border-radius: 4.88px;
+    /* padding: 4.06px; */
+    color: #FF8A00;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+.trash-btn {
+   width: 142px;
+   height: 28px;
+   gap: 5px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-content: center;
+   background: white;
+   border: none;
+   /* padding-top: 5px; */
+   font-size: 16px;
+   line-height: 24px;
+   font-weight: 500;
+   color: #FF8A00;
+   position: relative;
+   top: 20px;
+   cursor: pointer;
+}
+.trash{
+    margin-top: 2px;
+    font-size: 22px;
+}
+.cart-total {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.cart-summary {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+.cart_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 200px;
+}
+.faint{
+    color: hsl(0, 0%, 60%);
+    text-decoration:line-through;
+}
+.disco{
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+}
+.it-price{
+    margin-left: 40px;
+}
+.quantity-selector2 {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    gap: 10px;
+    position: relative;
+    right: -20%;
+}
+
+.quantity-selector2 button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    background-color: #FF8A00;
+}
+
+.quantity-selector2 .quantity {
+    padding: 10px;
+    font-size: 16px;
+}
+.quan2{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-left: 3px;
+}
+.tbtns{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    gap: 130%;
+    position: relative;
+    bottom: 30px;
+}
+.img-info{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.itemName{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.itemName h3{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+}
+.itemName p{
+    color: #FF8A00;
+}
+.cart-summary{
+    width: 446px;
+    height: 397px;
+    background-color: white;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06);
+    border:  none;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+.cart-total-title2 span{
+    color: black;
+    margin-left: 55px;
+    font-size: 24px;
+}
+.cart-total-title3 span{
+    color: black;
+    margin-left: 55px;
+    font-size: 24px;
+}
+.cart-total-title2 p{
+    font-size: 24px;
+}
+.cart-total-title3 p{
+    font-size: 24px;
+}
+.cart-total{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-weight: 400;
+}
+.cart-total-title h3{
+    font-size: 32px;
+    font-weight: 500;
+}
+.checkout{
+    width: 402px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #009444;
+    color: white;
+}

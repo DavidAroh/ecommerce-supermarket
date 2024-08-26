@@ -5,7 +5,6 @@ import { BiShoppingBag } from "react-icons/bi";
 import { IoHeartOutline } from "react-icons/io5";
 import { RiUserLine } from "react-icons/ri";
 import { BsChevronDown } from "react-icons/bs";
-import { RiSearchLine } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
@@ -73,7 +72,9 @@ const Navbar = () => {
           </div>
           <div className='links'>
             <ul className='links'>
-              <li><a href='#'>Home</a></li>
+              <Link to={`/`} className='link3'>
+              <li>Home</li>
+              </Link>
               <li className='drop'>
                 <a href='#' onClick={toggleCategoriesDropdown}>Categories <BsChevronDown /></a>
                 {showCategoriesDropdown && (
@@ -200,10 +201,15 @@ const Navbar = () => {
         </div>
 
         <div className='search-box'>
-          <RiSearchLine className='search' />
-          <input type='text' className='search-box-1' placeholder='What are you looking for?' />
-          <button>Search</button>
+          {/* <RiSearchLine className='search' /> */}
+          <input type='text' className='search-box-1' placeholder='Ask SuperQuick AI or Search' />
+          <button>
+            <img src='../assets/Ai.svg' alt='ai'></img>
+          </button>
         </div>
+        {/* <div className='toggle'> 
+                
+        </div> */}
       </div>
     </>
   );

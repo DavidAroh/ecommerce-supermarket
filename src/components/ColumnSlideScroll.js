@@ -13,19 +13,19 @@ import "../styles/customSlick.css";
 const VerticalSwiper = () => {
   const slides = [
     {
-      image: "assets/mercy.svg",
+      image: "../assets/mercy.svg",
       title: "“Quick Delivery”",
       text: "I was amazed by the lightning-fast delivery from this supermarket! I placed my order at 10 am, and by 2 pm, my groceries were at my doorstep. The driver was friendly and courteous, and the packaging was impeccable. I've never experienced such quick delivery from any online store before.",
       customer: "Mercy Robert "
     },
     {
-      image: "assets/udeme.svg",
+      image: "../assets/udeme.svg",
       title: "“Fresh Delivery”",
       text: "I've been using this supermarket for a few months now, and I must say, their commitment to freshness is impressive. They always deliver products that are well within their expiration dates, and the packaging is designed to keep them fresh.",
       customer: "Udeme Jonah"
     },
     {
-      image: "assets/faith.svg",
+      image: "../assets/faith.svg",
       title: "“Best Price”",
       text: "The prices offered by this supermarket are the best in town! I've tried other online stores, but none match the value for money offered by this supermarket. The products are fresh, and the prices are reasonable. I've experienced no issues with pricing, and the customer service is good.",
       customer: "Amadi Faith"

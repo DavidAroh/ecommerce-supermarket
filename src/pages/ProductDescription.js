@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 import QuantitySelector from "../components/QuantitySelector";
 import StarRating from '../components/StarRating';
 import LikedButton2 from '../components/LikedButton2';
@@ -10,7 +11,7 @@ const ProductDescription = () => {
   const [selectedBox, setSelectedBox] = useState(null);
 
   const [displayedImage, setDisplayedImage] = useState('');
-
+  const { addToCart } = useContext(CartContext);
 
   const boxes = [
     { id: 1, label: 'Box 1', img: '../assets/green apple.svg', displayImg: '../assets/big apple.svg' },
@@ -110,7 +111,7 @@ const ProductDescription = () => {
               <QuantitySelector minQuantity={1} />
             </div>
             <div className='des-btns'>
-              <button className='cart2' >Add to Cart</button>
+              <button className='cart2'>Add to Cart</button>
               <button className='buy'>Buy Now</button>
             </div>
         </div>

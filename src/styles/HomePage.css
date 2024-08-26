@@ -389,8 +389,6 @@ span{
     border-radius: 4px;
     text-align: center;
     animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Fades in and out */
-    position: fixed;
-    z-index: 20;
 }
 
 @keyframes fadein {
@@ -402,3 +400,6 @@ span{
     from { opacity: 1; }
     to { opacity: 0; }
 }
+/* @media screen and (max-width: 678px) {
+
+} */

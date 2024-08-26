@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 import ChatbotToggle from '../components/ChatbotToggle';
 import Homeproduct from '../components/Home-product';
@@ -6,25 +7,34 @@ import { GoArrowRight } from "react-icons/go";
 import LikeButton from '../components/LikedButton';
 import StarRating from '../components/StarRating';
 import Footer from '../components/Footer';
+// import Cart from '../components/Cart';
 import ColumnSlideScroll from "../components/ColumnSlideScroll";
 import '../styles/HomePage.css';
 
 const Homepage = () => {
-  const [popularProduct, setPopularProduct] = useState(Homeproduct);
+  const [popularProduct] = useState(Homeproduct);
+  const { addToCart } = useContext(CartContext);
   const [clickedBox, setClickedBox] = useState(null);
   const [showPrompt, setShowPrompt] = useState(true);
+  const [promptMessage, setPromptMessage] = useState('');
   const [addedProduct, setAddedProduct] = useState(null);
 
   const handleBoxClick = (id) => {
     setClickedBox(id);
   };
 
-  const addtoCart = (product) => {
-    // Add product to cart logic here
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    setAddedProduct(product);
+    setPromptMessage(`${product.Name} has been added to your cart!`);
+    setShowPrompt(true);
+    setTimeout(() => setShowPrompt(false), 3000);
+  };
 
-    setAddedProduct(product); // Set the product that was added
-    setShowPrompt(true); // Show the prompt message
-    setTimeout(() => setShowPrompt(false), 3000); // Hide the prompt after 3 seconds
+  const handleLikeProduct = (product) => {
+    setPromptMessage(`${product.Name} has been liked!`);
+    setShowPrompt(true);
+    setTimeout(() => setShowPrompt(false), 3000);
   };
 
   const boxes = [
@@ -61,7 +71,7 @@ const Homepage = () => {
             </div>
           </div>
           <div className='right'>
-            <img src='assets/Girl pic.svg' alt='girl-pic'></img>
+            <img src='../assets/Girl pic.svg' alt='girl-pic'></img>
           </div>
           <ChatbotToggle />
         </div>
@@ -109,7 +119,7 @@ const Homepage = () => {
         {/* Add to Cart Prompt */}
         {showPrompt && (
           <div className="prompt">
-            {addedProduct && `${addedProduct.Name} has been added to your cart!`}
+            {promptMessage}
           </div>
         )}
 
@@ -131,7 +141,7 @@ const Homepage = () => {
                       <img src={curElm.image} alt={curElm.Name}></img>
                       <div className='icon'>
                         <div className='icon-circle'>
-                          <LikeButton className='heart' />
+                          <LikeButton className='heart' onLike={() => handleLikeProduct(curElm)}/>
                         </div>
                       </div>
                     </div>
@@ -139,7 +149,7 @@ const Homepage = () => {
                       <p className='first'>{curElm.Name}</p>
                       <p className='price'>N{curElm.price}<span className='money'>N20.99</span></p>
                       <StarRating totalStars={5} />
-                      <button className='cart' onClick={() => addtoCart(curElm)}>Add to Cart</button>
+                      <button className='cart' onClick={() => handleAddToCart(curElm)}>Add to Cart</button>
                     </div>
                   </div>
                 )
@@ -214,7 +224,7 @@ const Homepage = () => {
           </div>
         </div>
 
-        <br/>
+          <br/>
         <ColumnSlideScroll />
 
         <Footer/>

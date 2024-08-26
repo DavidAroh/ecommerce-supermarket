@@ -1,0 +1,337 @@
+.payment-container{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 5%;
+}
+.payment-left{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 8%;
+}
+.personal-info{
+    width: 679px;
+    height: 279px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    padding-left: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06);
+}
+.shipping-info{
+    width: 679px;
+    height: 350px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06);
+    margin-top: 30px;
+    padding-left: 20px;
+    gap: 10px;
+}
+.personal-info h2{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28.8px;
+    color: #009444;
+    padding-bottom: 20px;
+}
+.shipping-info h2{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28.8px;
+    color: #009444;
+    padding-bottom: 20px;
+}
+.long{
+    width: 639px;
+    max-width: 649px;
+    position: relative;
+    padding: 12px 30px;
+    height: 60px;
+    background-color: #F6F6F699;
+    border: 0.5px solid #999999;
+    color: #999999;
+    outline: none;
+    border-radius: 5px;
+}
+.long::placeholder{
+    padding-left: 13px;
+}
+.email-number{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 30px;
+}
+.short1{
+    width: 295px;
+    height: 60px;
+    background-color: #F6F6F699;
+    border: 0.5px solid #999999;
+    border-radius: 5px;
+    outline: none;
+    padding: 12px 30px;
+}
+.short1::placeholder{
+    padding-left: 13px;
+}
+.short2{
+    width: 332px;
+    height: 60px;
+    background-color: #F6F6F699;
+    border: 0.5px solid #999999;
+    border-radius: 5px;
+    padding: 12px 30px;
+}
+.short2::placeholder{
+    padding-left: 13px;
+}
+.icon2{
+    font-size: 24px;
+    font-weight: 400;
+    color: #999999;
+    position: absolute;
+    top: 78%;
+    margin-left: 10px;
+    transform: translateY(-50%);
+}
+.icon1{
+    font-size: 24px;
+    font-weight: 400;
+    color: #999999;
+    position: absolute;
+    top: 65%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+.icon4{
+    font-size: 24px;
+    font-weight: 400;
+    color: #999999;
+    position: absolute;
+    top: 129%;
+    left: 10.2%;
+    transform: translateY(-50%);
+}
+.icon5{
+    font-size: 24px;
+    font-weight: 400;
+    color: #999999;
+    position: absolute;
+    top: 142.6%;
+    left: 10.2%;
+    transform: translateY(-50%);
+}
+.name-info{
+    position: relative;
+    width: 500%;
+    max-width: 550px; 
+}
+.add-postal-info{
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+    padding-bottom: 20px;
+}
+.address{
+    width: 342px;
+    height: 60px;
+    background-color: #F6F6F699;
+    border: 0.5px solid #999999;
+    border-radius: 5px;
+    padding: 12px 30px;
+    outline: none;
+}
+.postal{
+    width: 285px;
+    height: 60px;
+    background-color: #F6F6F699;
+    border: 0.5px solid #999999;
+    border-radius: 5px;
+    padding: 12px 30px;
+    outline: none;
+}
+.address::placeholder{
+    padding-left: 13px;
+}
+.postal::placeholder{
+    padding-left: 13px;
+}
+.icon3{
+    font-size: 24px;
+    font-weight: 400;
+    color: #999999;
+    position: absolute;
+    top: 113%;
+    margin-left: 10px;
+    transform: translateY(-50%);
+}
+.payment-right img{
+    width: 84.08px;
+    height: 104.37px;
+}
+.payment-right li {
+    display: flex;
+    flex-direction: row;
+    width: 376px;
+}
+.p1{
+    margin-left: 70px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.p2{
+    font-size: 16px;
+    font-weight: 500;
+}
+.p3{
+    font-size: 12px;
+    font-weight: 400;
+}
+.p4{
+    font-size: 12px;
+    font-weight: 400;
+}
+.payment-right{
+    width: 440px auto;
+    height: 524px auto;
+    border: none;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06);
+}
+.span-1 span{
+    color: black;
+    padding-left: 63.4%;
+}
+.span-2 span{
+    color: black;
+    padding-left: 65.4%;
+    
+}
+.span-1{
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.span-2{
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.span-3{
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.span-3{
+    font-size: 14px;
+    font-weight: 500;
+}
+.span-3 span{
+    color: black;
+    padding-left: 67%;
+}
+.span-4 {
+    color: #009444;
+    font-size: 14px;
+    margin-top: 7px;
+    font-weight: 600;
+}
+.span-4 span{
+    padding-left: 70%;
+}
+.payBtn{
+    background-color: #009444;
+    width: 390px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.payItems{
+    font-size: 24px;
+    font-weight: 500;
+    color: #4D4D4D;
+}
+.payment-method{
+    width: 440px;
+    height: 165px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06);
+    justify-content: center;
+    display: block;
+}
+.online{
+    width: 397px;
+    height: 45px;
+    border: 0.5px solid #999999;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+    margin: auto;
+    margin-top: 13px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.online2{
+    width: 397px;
+    height: 45px;
+    border: 0.5px solid #999999;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+    margin: auto;
+    margin-top: 13px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.online-icon{
+    font-size: 35px;
+    font-weight: 300;
+}
+.online:hover{
+    background: white;
+    border-color: #009444;
+    transform: scale(1.05);
+    box-shadow: 0 1px 3px rgba(0, 148, 68, 1);
+}
+.online.clicked {
+    background-color: white;
+    color: #009444;
+    transform: scale(1.05);
+    border-color: #009444;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06);
+}
+.online2:hover{
+    background: white;
+    border-color: #009444;
+    transform: scale(1.05);
+    box-shadow: 0 1px 3px rgba(0, 148, 68, 1);
+}
+.online2.clicked {
+    background-color: white;
+    /* color: #009444; */
+    transform: scale(1.05);
+    border-color: #009444;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06);
+}
+.pay-meth{
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #009444;
+}
